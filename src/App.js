@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import ImageList from './components/ImageList';
-import InputForm from './components/InputForm';
 import fetchImages from './helpers/FetchImages';
 import { ClockLoader } from 'react-spinners';
+import Header from './components/Header';
 
 function App() {
   const [resultImages, setResultImages] = useState([]);
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className=''>
-      <InputForm onFormSubmit={handleFormSubmit} />
+      <Header onFormSubmit={handleFormSubmit} />
       {isLoading ? (
         <ClockLoader />
       ) : (

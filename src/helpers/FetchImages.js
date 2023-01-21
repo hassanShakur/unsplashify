@@ -4,6 +4,7 @@ const fetchImages = async (searchTerm) => {
   const response = await axiosBase.get('/search/photos', {
     params: {
       query: searchTerm,
+      per_page: 20,
     },
   });
   return response;
