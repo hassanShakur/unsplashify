@@ -10,13 +10,11 @@ function App() {
   const handleFormSubmit = async (keywords) => {
     const { data } = await fetchImages(keywords);
     setResultImages(data.results);
-    console.log(resultImages);
   };
   return (
     <div className=''>
-      <ImageList />
-      <p>found {resultImages.length} images</p>
       <InputForm onFormSubmit={handleFormSubmit} />
+      <ImageList images={resultImages} />
     </div>
   );
 }
