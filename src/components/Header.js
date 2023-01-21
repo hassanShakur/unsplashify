@@ -1,13 +1,14 @@
 import React from 'react';
 import InputForm from './InputForm';
-import Logo from './Logo';
 
 const Header = ({ onFormSubmit }) => {
   return (
-    <div className='header'>
-      <Logo />
-      <InputForm onFormSubmit={onFormSubmit} />
-    </div>
+    <>
+      <div className='header'>
+        <h2 className='title'>unsplashify</h2>
+        <InputForm onFormSubmit={onFormSubmit} />
+      </div>
+    </>
   );
 };
 

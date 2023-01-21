@@ -6,7 +6,11 @@ const ImageList = ({ images }) => {
     return <ImageCard key={image.id} image={image} />;
   });
 
-  return <div className='container'>{imagesHtml}</div>;
+  return (
+    <>
+      <div className='container'>{imagesHtml}</div>
+    </>
+  );
 };
 
 export default ImageList;

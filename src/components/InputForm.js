@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from './Logo';
 
 const InputForm = ({ onFormSubmit }) => {
   const [inputText, setInputText] = useState('');
@@ -9,7 +10,7 @@ const InputForm = ({ onFormSubmit }) => {
     setInputText('');
   };
   return (
-    <form onSubmit={(e) => handleFormSubmit(e)}>
+    <form className='search-form' onSubmit={handleFormSubmit}>
       <input
         type='text'
         value={inputText}
@@ -17,6 +18,9 @@ const InputForm = ({ onFormSubmit }) => {
         className='search-input'
         onChange={(e) => setInputText(e.target.value)}
       />
+      <button type='submit' className='submit-btn'>
+        <Logo />
+      </button>
     </form>
   );
 };
