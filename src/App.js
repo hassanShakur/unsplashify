@@ -4,6 +4,7 @@ import ImageList from './components/ImageList';
 import fetchImages from './helpers/FetchImages';
 import { ClockLoader } from 'react-spinners';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   const [resultImages, setResultImages] = useState([]);
@@ -19,13 +20,14 @@ function App() {
   if (isLoading) return;
 
   return (
-    <div className=''>
+    <div className='main'>
       <Header onFormSubmit={handleFormSubmit} />
       {isLoading ? (
         <ClockLoader />
       ) : (
         <ImageList images={resultImages} />
       )}
+      <Footer />
     </div>
   );
 }
