@@ -20,7 +20,8 @@ body {
 
 .main {
   position: relative;
-  min-height: 98vh;
+  min-height: 91vh;
+  padding-bottom: 14vmin;
 }
 
 .main .loader {
