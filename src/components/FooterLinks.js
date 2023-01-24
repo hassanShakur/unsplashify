@@ -7,17 +7,17 @@ const FooterLinks = () => {
     <ul className='links'>
       <li>
         <a href='https://github.com/hassanShakur'>
-          <FaGithub fontSize='2.5vmin' color='#fff' />
+          <FaGithub className='footer-icon' />
         </a>
       </li>
       <li>
         <a href='https://www.linkedin.com/in/hassan-shakur-4283ab232/'>
-          <FaLinkedinIn fontSize='2.5vmin' color='#fff' />
+          <FaLinkedinIn className='footer-icon' />
         </a>
       </li>
       <li>
         <a href='mailto: hass.shakurhassan@gmail.com'>
-          <TfiEmail fontSize='2.5vmin' color='#fff' />
+          <TfiEmail className='footer-icon' />
         </a>
       </li>
     </ul>

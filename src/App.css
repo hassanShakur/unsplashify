@@ -91,16 +91,9 @@ button:hover {
 
 .container {
   padding: 2vmax;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-auto-rows: 20px;
-  gap: 0 10px; */
-  /* margin-bottom: 10vmax; */
-  padding-bottom: 10rem !important;
 }
 
 .image-div img {
-  /* width: 230px; */
   width: 100%;
   border-radius: 0.3rem;
 }
@@ -116,17 +109,22 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  margin-top: 20rem;
 }
 
 footer > div {
   display: flex;
+  align-items: center;
 }
 
 ul li {
   list-style: none;
   display: inline;
   margin: 10px;
+}
+
+.footer-icon, .footer-logo {
+  color: #fff;
+  font-size: 4vmin;
 }
 
 @media (max-width: 540px) {
