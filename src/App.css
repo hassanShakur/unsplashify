@@ -122,7 +122,8 @@ ul li {
   margin: 10px;
 }
 
-.footer-icon, .footer-logo {
+.footer-icon,
+.footer-logo {
   color: #fff;
   font-size: 4vmin;
 }
