@@ -13,8 +13,9 @@
 body {
   font-family: 'EB Garamond', serif;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   position: relative;
+  padding: 0 5vmin;
 }
 
 .main {
@@ -41,14 +42,14 @@ body {
 }
 
 form {
-  padding: 0.3rem;
+  padding: 0.6vmin;
   display: grid;
   justify-content: center;
   grid-template-columns: 5fr 1fr;
 }
 
 .search-form input {
-  padding: 0.5rem 1rem;
+  padding: 2vmin 3vmin;
   border-radius: 5vmin;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -84,19 +85,22 @@ button:hover {
   text-transform: capitalize;
   color: rgb(238, 0, 79);
   letter-spacing: 1.4px;
+  font-size: 5vmin;
 }
 
 .container {
   padding: 2vmax;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   grid-auto-rows: 20px;
-  gap: 0 10px;
-  padding-bottom: 10vmax;
+  gap: 0 10px; */
+  /* margin-bottom: 10vmax; */
+  padding-bottom: 10rem !important;
 }
 
 .image-div img {
-  width: 230px;
+  /* width: 230px; */
+  width: 100%;
   border-radius: 0.3rem;
 }
 
@@ -111,7 +115,7 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 20rem;
 }
 
 footer > div {
@@ -122,4 +126,12 @@ ul li {
   list-style: none;
   display: inline;
   margin: 10px;
+}
+
+@media (max-width: 540px) {
+  .header {
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 5vmin;
+  }
 }

@@ -8,7 +8,9 @@ const ImageList = ({ images }) => {
 
   return (
     <>
-      <div className='container'>{imagesHtml}</div>
+      <div className='container' id='container'>
+        {imagesHtml}
+      </div>
     </>
   );
 };
