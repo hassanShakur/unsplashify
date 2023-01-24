@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import ImageList from './components/ImageList';
 import fetchImages from './helpers/FetchImages';
-import { ClockLoader } from 'react-spinners';
+import { PuffLoader } from 'react-spinners';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -17,13 +17,15 @@ function App() {
     setIsLoading(false);
   };
 
-  if (isLoading) return;
-
   return (
     <div className='main'>
       <Header onFormSubmit={handleFormSubmit} />
       {isLoading ? (
-        <ClockLoader />
+        <PuffLoader
+          className='loader'
+          color='rgb(238, 0, 79)'
+          speedMultiplier='2.4'
+        />
       ) : (
         <ImageList images={resultImages} />
       )}

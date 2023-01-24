@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 
 const InputForm = ({ onFormSubmit }) => {
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState('cars');
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     onFormSubmit(inputText);
-    setInputText('');
   };
+
   return (
     <form className='search-form' onSubmit={handleFormSubmit}>
       <input
