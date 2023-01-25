@@ -12,7 +12,7 @@ const InputForm = ({ onFormSubmit }) => {
   };
 
   useEffect(() => {
-    onFormSubmit('cars');
+    onFormSubmit(inputText);
   }, []);
 
   return (
