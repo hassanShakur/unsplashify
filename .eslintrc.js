@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   env: {
     browser: true,
     es2021: true,
@@ -8,7 +8,7 @@ module.exports = {
   //     'plugin:react/recommended',
   //   ],
   extends: 'defaults',
-  
+
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
