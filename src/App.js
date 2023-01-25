@@ -9,12 +9,12 @@ import Footer from './components/Footer';
 
 const macyOptions = {
   container: '#container',
-  // trueOrder: false,
-  // mobileFirst: true,
   margin: 24,
   columns: 4,
   breakAt: {
-    1000: 4,
+    1800: 5,
+    1200: 4,
+    1000: 3,
     650: {
       margin: 30,
       columns: 2,
@@ -22,17 +22,16 @@ const macyOptions = {
     400: {
       margin: 18,
     },
+    300: 1,
   },
 };
-
-// var macy = Macy(macyOptions);
 
 function App() {
   const [resultImages, setResultImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    var macy = Macy(macyOptions);
+    Macy(macyOptions);
   }, [resultImages]);
 
   const handleFormSubmit = async (keywords) => {
