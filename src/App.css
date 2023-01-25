@@ -150,6 +150,7 @@ ul li {
     justify-content: space-between;
     width: 90%;
     grid-template-columns: 2fr 1fr;
+    margin-bottom: 5vmin;
   }
 
   .search-form input {
