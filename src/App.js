@@ -7,6 +7,8 @@ import { PuffLoader } from 'react-spinners';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+let page = 1;
+
 const macyOptions = {
   container: '#container',
   margin: 24,
@@ -29,20 +31,33 @@ const macyOptions = {
 function App() {
   const [resultImages, setResultImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [currSearchTerm, setCurrSearchTerm] = useState('cars');
 
   useEffect(() => {
     Macy(macyOptions);
   }, [resultImages]);
 
-  const handleFormSubmit = async (keywords) => {
+  const handleFormSubmit = async (searchTerm) => {
+    setCurrSearchTerm(searchTerm);
+    page = 1;
+
     try {
       setIsLoading(true);
-      const { data } = await fetchImages(keywords);
-      setResultImages(data.results);
+      const images = await fetchImages(searchTerm, page);
+      setResultImages(images);
       setIsLoading(false);
     } catch (err) {
       console.log(err.message);
     }
+  };
+
+  const loadMoreImages = async () => {
+    page += 1;
+    const images = await fetchImages(currSearchTerm, page);
+
+    setResultImages((prevImages) => {
+      return [...prevImages, ...images];
+    });
   };
 
   return (
@@ -56,7 +71,10 @@ function App() {
             speedMultiplier='2.4'
           />
         ) : (
-          <ImageList images={resultImages} />
+          <ImageList
+            images={resultImages}
+            loadMoreImages={loadMoreImages}
+          />
         )}
       </div>
       <Footer />

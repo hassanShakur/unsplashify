@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import ImageCard from './ImageCard';
 
-const ImageList = ({ images }) => {
+const ImageList = ({ images, loadMoreImages }) => {
   const imagesHtml = images.map((image) => {
     return <ImageCard key={image.id} image={image} />;
   });
@@ -43,7 +43,9 @@ const ImageList = ({ images }) => {
         {imagesHtml}
       </div>
       <div className='load-more-div'>
-        <button className='load-more'>load more</button>
+        <button onClick={loadMoreImages} className='load-more'>
+          load more
+        </button>
       </div>
     </>
   );
