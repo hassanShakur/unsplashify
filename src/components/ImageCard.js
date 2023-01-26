@@ -1,19 +1,23 @@
 import React from 'react';
 
-const ImageCard = (props) => {
-  const { urls, description } = props.image;
-  // console.log(props.image);
+const ImageCard = ({ image }) => {
+  const { urls, description } = image;
+  // console.log(image);
 
   return (
     <div className='image-div'>
       <img
-        color={props.image.color}
         className='image'
         src={urls.thumb}
-        data-src={urls.small}
+        data-src={urls.regular}
         alt={description}
       />
-      <div className="image-overlay"></div>
+      <div
+        className='image-overlay'
+        style={{
+          backgroundColor: `${image.color}`,
+        }}
+      ></div>
     </div>
   );
 };

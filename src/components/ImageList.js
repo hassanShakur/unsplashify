@@ -15,16 +15,17 @@ const ImageList = ({ images }) => {
 
     const callback = (entries, observer) => {
       entries.forEach((entry) => {
-        console.log(entry);
+        // console.log(entry);
 
         const image = entry.target;
-        
+        const imageOverlay = image.nextElementSibling;
+
         if (entry.isIntersecting) {
           image.src = image.dataset.src;
-          image.style.filter = 'unset';
+          imageOverlay.style.opacity = `0`;
+          // imageOverlay.style = `z-index: -10`;
         }
 
-        // console.log(image.dataset);
       });
     };
     // window.addEventListener('load', () => {

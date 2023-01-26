@@ -35,10 +35,14 @@ function App() {
   }, [resultImages]);
 
   const handleFormSubmit = async (keywords) => {
-    setIsLoading(true);
-    const { data } = await fetchImages(keywords);
-    setResultImages(data.results);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+      const { data } = await fetchImages(keywords);
+      setResultImages(data.results);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
