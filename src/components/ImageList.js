@@ -25,7 +25,6 @@ const ImageList = ({ images }) => {
           imageOverlay.style.opacity = 0;
           imageOverlay.style.height = 0;
         }
-
       });
     };
     // window.addEventListener('load', () => {
@@ -42,6 +41,9 @@ const ImageList = ({ images }) => {
     <>
       <div className='container' id='container'>
         {imagesHtml}
+      </div>
+      <div className='load-more-div'>
+        <button className='load-more'>load more</button>
       </div>
     </>
   );

@@ -20,6 +20,23 @@ body {
   }
 }
 
+button {
+  padding: 1.4vmin 2.4vmin;
+  text-transform: capitalize;
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  border-radius: 2.4vmin;
+  border: 1px solid $primary;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    border-radius: 6px;
+    transform: translateY(3px);
+  }
+}
+
 .header {
   width: 94%;
 
@@ -65,11 +82,10 @@ input:focus {
   border: 1px solid transparent;
   border-right: 3px solid rgb(217, 99, 138);
   background-color: rgba(137, 20, 59, 0.096);
-}
 
-button:hover {
-  cursor: pointer;
-  background-color: rgba(146, 25, 66, 0.252);
+  &:hover {
+    background-color: rgba(146, 25, 66, 0.252);
+  }
 }
 
 .title {
@@ -92,7 +108,7 @@ button:hover {
   &:hover {
     transform: scale(1.02);
     cursor: pointer;
-    box-shadow: 5px 9px 5px 0px rgba(0,0,0,0.24);
+    box-shadow: 5px 9px 5px 0px rgba(0, 0, 0, 0.24);
   }
 }
 
@@ -114,6 +130,13 @@ img {
   border-radius: 0.3rem;
   transition: all 0.6s ease-out;
   /* z-index: -10; */
+}
+
+.load-more-div {
+  display: grid;
+  place-items: center;
+  margin: 5vmin 2vmin;
+  margin-bottom: 2vmin;
 }
 
 footer {
