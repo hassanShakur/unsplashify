@@ -3,7 +3,7 @@ import axiosBase from '../api/axiosBase';
 const fetchImages = async (searchTerm) => {
   const response = await axiosBase.get('/search/photos', {
     params: {
-      query: searchTerm,
+      query: searchTerm.toLowerCase(),
       per_page: 20,
     },
   });

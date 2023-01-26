@@ -96,6 +96,8 @@ button:hover {
 .image-div img {
   width: 100%;
   border-radius: 0.3rem;
+  filter: blur(3px);
+  transition: filter 3s ease-out;
 }
 
 footer {
