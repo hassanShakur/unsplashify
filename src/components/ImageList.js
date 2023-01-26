@@ -22,8 +22,8 @@ const ImageList = ({ images }) => {
 
         if (entry.isIntersecting) {
           image.src = image.dataset.src;
-          imageOverlay.style.opacity = `0`;
-          // imageOverlay.style = `z-index: -10`;
+          imageOverlay.style.opacity = 0;
+          imageOverlay.style.height = 0;
         }
 
       });

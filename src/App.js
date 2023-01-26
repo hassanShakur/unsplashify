@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Macy from 'macy';
-import './App.css';
+import './styles/App.scss';
 import ImageList from './components/ImageList';
 import fetchImages from './helpers/FetchImages';
 import { PuffLoader } from 'react-spinners';
