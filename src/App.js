@@ -1,69 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect } from 'react';
+import usePhotos from './hooks/usePhotos';
+
 import Macy from 'macy';
-import './styles/App.scss';
+import macyOptions from './constants/macyOptions';
+
 import ImageList from './components/ImageList';
-import fetchImages from './helpers/FetchImages';
 import { PuffLoader } from 'react-spinners';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-let page = 1;
+import './styles/App.scss';
 
-const macyOptions = {
-  container: '#container',
-  margin: 24,
-  columns: 4,
-  breakAt: {
-    1800: 5,
-    1200: 4,
-    1000: 3,
-    650: {
-      margin: 30,
-      columns: 2,
-    },
-    400: {
-      margin: 18,
-    },
-    300: 1,
-  },
-};
 
-function App() {
-  const [resultImages, setResultImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [currSearchTerm, setCurrSearchTerm] = useState('cars');
+
+const App = () => {
+  const [images, isLoading, search, loadMoreImages] =
+    usePhotos('cars');
 
   useEffect(() => {
     Macy(macyOptions);
-  }, [resultImages]);
-
-  const handleFormSubmit = async (searchTerm) => {
-    setCurrSearchTerm(searchTerm);
-    page = 1;
-
-    try {
-      setIsLoading(true);
-      const images = await fetchImages(searchTerm, page);
-      setResultImages(images);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
-  const loadMoreImages = async () => {
-    page += 1;
-    const images = await fetchImages(currSearchTerm, page);
-
-    setResultImages((prevImages) => {
-      return [...prevImages, ...images];
-    });
-  };
+  }, [images]);
 
   return (
     <React.Fragment>
       <div className='main'>
-        <Header onFormSubmit={handleFormSubmit} />
+        <Header onFormSubmit={search} />
         {isLoading ? (
           <PuffLoader
             className='loader'
@@ -72,7 +33,7 @@ function App() {
           />
         ) : (
           <ImageList
-            images={resultImages}
+            images={images}
             loadMoreImages={loadMoreImages}
           />
         )}
@@ -80,6 +41,6 @@ function App() {
       <Footer />
     </React.Fragment>
   );
-}
+};
 
 export default App;
